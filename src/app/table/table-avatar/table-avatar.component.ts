@@ -6,10 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./table-avatar.component.css']
 })
 export class TableAvatarComponent implements OnInit {
-@Input() price: any;
-@Input() src: any;
-@Input() dame: any;
-  constructor() { }
+@Input() price: number;
+@Input() src: string;
+
+  constructor() { 
+    this.src = '';
+    this.price = 0
+  }
 
   ngOnInit(): void {
   }
