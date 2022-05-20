@@ -1,4 +1,8 @@
 <div class="container">
+    <app-form>
+        <p>Angular Form</p>
+    </app-form>
+    <hr>
     <div>
         <p>Sự kiện</p>
         <button class="btn btn-primary" (click)="onClickBtn()">
@@ -7,21 +11,22 @@
         <br>
         <div>
             <label for="input">Name</label>
-            <input type="text" name="" id="input" (input)=" onInput($event, 'name')"> [value]="inputValue.name"
+            <input type="text" name="" id="input" (input)=" onInput($event, 'name')" [value]="inputValue.name">
+
         </div>
         <div>
             <label for="input">Avatar</label>
-            <input type="text" name="" id="input" (input)=" onInput($event,'avatar')"> [value]="inputValue.avatar"
+            <input type="text" name="" id="input" (input)=" onInput($event,'avatar')" [value]="inputValue.avatar">
 
         </div>
         <div>
             <label for="input">Dame</label>
-            <input type="text" name="" id="input" (input)=" onInput($event,'dame')"> [value]="inputValue.dame"
+            <input type="text" name="" id="input" (input)=" onInput($event,'dame')" [value]="inputValue.dame">
 
         </div>
         <div>
             <label for="input">Price</label>
-            <input type="text" name="" id="input" (input)=" onInput($event,'price')"> [value]="inputValue.price"
+            <input type="text" name="" id="input" (input)=" onInput($event,'price')" [value]="inputValue.price">
 
         </div>
         <div>

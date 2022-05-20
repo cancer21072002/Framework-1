@@ -50,9 +50,11 @@ export class AppComponent {
     name:'',
     avatar:'',
     dame:'',
-    price:''
+    price:'',
+    defend:'',
+    speed:''
   }
-  onInput(event:any, key:'name'|'avatar'|'dame'|'price'){
+  onInput(event:any, key:'name'|'avatar'|'dame'|'price'|'defend'|'speed'){
     this.inputValue[key]=event.target.value;
   }
 
@@ -64,20 +66,27 @@ export class AppComponent {
   // onInputAvatar(event:any){
   //   this.inputAvatar=event.target.value;
   // }
-  onSubmit(){
-    console.log('Gia tri cac o Input',this.inputValue);
-  this.champs.push({}...this.inputValue,
-    dame:+this.inputValue.dame,
-    price:+this.inputValue.price
-    )
-  };
-  this.inputValue={
-    name:'',
-    avatar:'',
-    dame:'',
-    price:'',
-
-  };
+  onSubmit() {
+    console.log('Giá trị obj các ô input', this.inputValue);
+    // push obj this.input vào mảng champs để thêm 1 dòng dữ liệu mới
+    // inputValue sẽ có cấu trúc như obj trong mảng champs
+    // cần format lại obj theo đúng cấu trúc dữ liệu trong champs
+    this.champs.push({
+      ...this.inputValue,
+      dame: +this.inputValue.dame,
+      defend: +this.inputValue.defend,
+      speed: +this.inputValue.speed,
+      price: +this.inputValue.price,
+    });
+    // Gán lại giá trị default cho this.inputValue
+    this.inputValue = {
+      name: '',
+      avatar: '',
+      dame: '',
+      defend: '',
+      speed: '',
+      price: '',
+    };
+  }
 }
-
 
