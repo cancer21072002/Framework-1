@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-show-validate',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowValidateComponent implements OnInit {
 
-  constructor() { }
+  @Input() field: any;
+   @Input() key: string;
+  constructor() {
+      this.key = '';
+   }
 
   ngOnInit(): void {
   }

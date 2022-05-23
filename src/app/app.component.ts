@@ -8,85 +8,72 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Demo';
 
+  name = 'vandthph13979';
+  class = 'we16301';
   students = [
     {
-      name: 'ban A',
-      id: 'PH1111',
+      name: 'vandthph13979',
+      id: 'P1',
+      status: 1
+    },
+    {
+      name: 'vandthph13979',
+      id: 'P2',
+      status: 1
+    },
+    {
+      name: 'vandthph13979',
+      id: 'P3',
       status: 0
-    },
-    {
-      name: 'ban B',
-      id: 'PH2222',
-      status: 1
-    },
-    {
-      name: 'Ban C',
-      id: 'PH3333',
-      status: 1
     }
   ];
 
   champs = [
     {
-      name: 'Ahri',
-      dame: 400,
-      defend: 200,
-      speed: 100,
-      price: 6300,
-      avatar: 'https://kenhsongao.com/uploads/2021/05/photo-1-16154710895551258162210.jpg'
+      name: 'Eᴢreal',
+      dame: 500,
+      price: 6500,
+      avatar: 'https://camnang24h.net/wp-content/uploads/2019/04/hinh-nen-tuong-Ezreal-trong-lien-minh-huyen-thoai-6.jpg'
+    },
+    {
+      name: 'Draᴠen',
+      dame: 900,
+      price: 2000,
+      avatar: 'https://camnang24h.net/wp-content/uploads/2019/04/hinh-nen-tuong-Ezreal-trong-lien-minh-huyen-thoai-6.jpg'
+    },
+    {
+      name: 'Eᴢreal',
+      dame: 500,
+      price: 10000,
+      avatar: 'https://camnang24h.net/wp-content/uploads/2019/04/hinh-nen-tuong-Ezreal-trong-lien-minh-huyen-thoai-6.jpg'
     }
+
   ];
-   studentName = 'vandth';
-  studentId = 'PH13979';
+  studentName = 'Đỗ Thị Hồng Vân'
+  studentMSV = 'ph13479'
 
-  // Sự kiện
-  // Biến lưu trạng thái hiển thị bảng
+  //
   showStatus = true;
-  onClickBtn() {
-    console.log("Btn clicked!");
-    this.showStatus = !this.showStatus;
-  }
-  inputValue={
-    name:'',
-    avatar:'',
-    dame:'',
-    price:'',
-    defend:'',
-    speed:''
-  }
-  onInput(event:any, key:'name'|'avatar'|'dame'|'price'|'defend'|'speed'){
-    this.inputValue[key]=event.target.value;
-  }
+  // sự kiện
 
-  // inputName='';
-  // onInputName(event:any){
-  //   this.inputName= event.target.value;
-  // }
-  // inputAvatar='';
-  // onInputAvatar(event:any){
-  //   this.inputAvatar=event.target.value;
-  // }
+  onClick() {
+    this.showStatus = !this.showStatus
+
+  }
+  inputObj = {
+    name: '',
+    avatar: '',
+    dame: '',
+    price: ''
+  }
+  onInput(e: any, key: 'name' | 'avatar' | 'dame' | 'price') {
+    this.inputObj[key] = e.target.value
+  }
   onSubmit() {
-    console.log('Giá trị obj các ô input', this.inputValue);
-    // push obj this.input vào mảng champs để thêm 1 dòng dữ liệu mới
-    // inputValue sẽ có cấu trúc như obj trong mảng champs
-    // cần format lại obj theo đúng cấu trúc dữ liệu trong champs
     this.champs.push({
-      ...this.inputValue,
-      dame: +this.inputValue.dame,
-      defend: +this.inputValue.defend,
-      speed: +this.inputValue.speed,
-      price: +this.inputValue.price,
-    });
-    // Gán lại giá trị default cho this.inputValue
-    this.inputValue = {
-      name: '',
-      avatar: '',
-      dame: '',
-      defend: '',
-      speed: '',
-      price: '',
-    };
+      ...this.inputObj,
+      dame: +this.inputObj.dame,
+      price: +this.inputObj.price
+    })
   }
 }
-
